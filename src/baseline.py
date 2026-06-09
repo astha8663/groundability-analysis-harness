@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import normalize
 from sklearn.metrics import confusion_matrix
-from load import load_class_names
+from src.load import load_class_names
 
 
 def fit_projection(seen_features, seen_labels, text_bank):
@@ -68,13 +68,14 @@ def evaluate_zero_shot(
         "predictions": predictions
     }
 
-from load import (
+from src.load import (
     load_train_features,
     load_train_labels,
     load_test_features,
     load_test_labels,
     load_full_embeddings,
-    load_split
+    load_split,
+    load_class_names
 )
 
 if __name__ == "__main__":
