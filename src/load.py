@@ -120,8 +120,8 @@ if __name__ == "__main__":
     class_descriptions = load_class_names()
 
     seen_classes, unseen_classes = load_split(
-        "rs48.npy",
-        "ru12.npy"
+        "rs55.npy",
+        "ru5.npy"
     )
 
     verify_alignment(

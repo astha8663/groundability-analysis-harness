@@ -91,8 +91,8 @@ if __name__ == "__main__":
     class_info = load_class_names()
 
     seen_classes, unseen_classes = load_split(
-        "rs48.npy",
-        "ru12.npy"
+        "rs55.npy",
+        "ru5.npy"
     )
 
     print("Training projection model...")
@@ -115,7 +115,7 @@ if __name__ == "__main__":
         unseen_classes
     )
 
-    print("\n===== RESULTS =====")
+    print("\nRESULTS")
 
     print(f"Overall Accuracy: {results['overall_accuracy']:.4f}")
 
