@@ -1,0 +1,797 @@
+{
+    "metadata": {
+        "source": "cseeyangchen/STAR ntu120_part_descriptions.txt",
+        "llm": "gpt-3.5",
+        "n_classes": 60,
+        "parts": [
+            "head",
+            "hand",
+            "arm",
+            "hip",
+            "leg",
+            "foot"
+        ]
+    },
+    "classes": [
+        {
+            "class_id": 0,
+            "class_name": "drink water",
+            "full_description": "Tilts slightly back to allow the water to flow down the throat. Grasps the water container (like a glass or a bottle) securely. Raises the water container towards the mouth for drinking. Maintains balance and stability while drinking. May shift weight slightly to support the body's position. May adjust position for stability, especially if standing or walking while drinking.",
+            "parts": {
+                "head": "Tilts slightly back to allow the water to flow down the throat",
+                "hand": "Grasps the water container (like a glass or a bottle) securely",
+                "arm": "Raises the water container towards the mouth for drinking",
+                "hip": "Maintains balance and stability while drinking",
+                "leg": "May shift weight slightly to support the body's position",
+                "foot": "May adjust position for stability, especially if standing or walking while drinking."
+            }
+        },
+        {
+            "class_id": 1,
+            "class_name": "eat meal",
+            "full_description": "Bends slightly forward to bring the food closer to the mouth. Holds utensils (like a fork or spoon) to pick up and guide food into the mouth. Lifts the utensil or brings food to the mouth. Provides stability and balance while seated or standing during the meal. May shift position slightly for comfort or to support the body's weight. Remains planted or adjusts position for stability, especially when seated.",
+            "parts": {
+                "head": "Bends slightly forward to bring the food closer to the mouth",
+                "hand": "Holds utensils (like a fork or spoon) to pick up and guide food into the mouth",
+                "arm": "Lifts the utensil or brings food to the mouth",
+                "hip": "Provides stability and balance while seated or standing during the meal",
+                "leg": "May shift position slightly for comfort or to support the body's weight",
+                "foot": "Remains planted or adjusts position for stability, especially when seated."
+            }
+        },
+        {
+            "class_id": 2,
+            "class_name": "brush teeth",
+            "full_description": "Leans over the sink to allow access to the mouth and keep toothpaste from dripping. Holds the toothbrush firmly and controls its movements. Guides the toothbrush in circular or back-and-forth motions to clean all teeth surfaces. Maintains balance and stability while standing at the sink. May shift weight slightly for comfort or support during brushing. Remains grounded or may adjust position for stability, especially if standing on one foot while brushing.",
+            "parts": {
+                "head": "Leans over the sink to allow access to the mouth and keep toothpaste from dripping",
+                "hand": "Holds the toothbrush firmly and controls its movements",
+                "arm": "Guides the toothbrush in circular or back-and-forth motions to clean all teeth surfaces",
+                "hip": "Maintains balance and stability while standing at the sink",
+                "leg": "May shift weight slightly for comfort or support during brushing",
+                "foot": "Remains grounded or may adjust position for stability, especially if standing on one foot while brushing."
+            }
+        },
+        {
+            "class_id": 3,
+            "class_name": "brush hair",
+            "full_description": "May tilt slightly forward or to the side to allow better access to different sections of the hair. Holds the hairbrush firmly and controls its movements. Guides the hairbrush through the hair, brushing from root to tip. Provides stability and balance while standing or sitting during brushing. May shift weight slightly for comfort or support during brushing. Remains planted or may adjust position for stability, especially if standing while brushing hair.",
+            "parts": {
+                "head": "May tilt slightly forward or to the side to allow better access to different sections of the hair",
+                "hand": "Holds the hairbrush firmly and controls its movements",
+                "arm": "Guides the hairbrush through the hair, brushing from root to tip",
+                "hip": "Provides stability and balance while standing or sitting during brushing",
+                "leg": "May shift weight slightly for comfort or support during brushing",
+                "foot": "Remains planted or may adjust position for stability, especially if standing while brushing hair."
+            }
+        },
+        {
+            "class_id": 4,
+            "class_name": "drop",
+            "full_description": "Might instinctively turn to look at the object as it falls. May release the object accidentally or intentionally. Can move in a reflexive motion to attempt to catch or break the fall of the object. May shift slightly in reaction to the movement of the arm. Might adjust position to provide stability or to move out of the way of the falling object. Could also shift position for stability or to avoid the falling object.",
+            "parts": {
+                "head": "Might instinctively turn to look at the object as it falls",
+                "hand": "May release the object accidentally or intentionally",
+                "arm": "Can move in a reflexive motion to attempt to catch or break the fall of the object",
+                "hip": "May shift slightly in reaction to the movement of the arm",
+                "leg": "Might adjust position to provide stability or to move out of the way of the falling object",
+                "foot": "Could also shift position for stability or to avoid the falling object"
+            }
+        },
+        {
+            "class_id": 5,
+            "class_name": "pick up",
+            "full_description": "May glance down to locate the object. Reaches out and grasps the object firmly. Extends toward the object to facilitate picking it up. May shift slightly to provide balance and support during the motion of picking up the object. Might bend at the knee to lower the body closer to the object. Can adjust position for stability, especially if balancing on one foot while picking up the object.",
+            "parts": {
+                "head": "May glance down to locate the object",
+                "hand": "Reaches out and grasps the object firmly",
+                "arm": "Extends toward the object to facilitate picking it up",
+                "hip": "May shift slightly to provide balance and support during the motion of picking up the object",
+                "leg": "Might bend at the knee to lower the body closer to the object",
+                "foot": "Can adjust position for stability, especially if balancing on one foot while picking up the object."
+            }
+        },
+        {
+            "class_id": 6,
+            "class_name": "throw",
+            "full_description": "Often turns to focus on the target or the direction of the throw. Grasps the object securely and provides the force for the throw. Swings backward to generate momentum, then moves forward quickly to release the object. Rotates slightly to transfer power from the lower body to the throwing arm. May step forward or push off the ground to add force to the throw. Provides stability and balance during the throwing motion, often pivoting or pushing off the ground for additional power.",
+            "parts": {
+                "head": "Often turns to focus on the target or the direction of the throw",
+                "hand": "Grasps the object securely and provides the force for the throw",
+                "arm": "Swings backward to generate momentum, then moves forward quickly to release the object",
+                "hip": "Rotates slightly to transfer power from the lower body to the throwing arm",
+                "leg": "May step forward or push off the ground to add force to the throw",
+                "foot": "Provides stability and balance during the throwing motion, often pivoting or pushing off the ground for additional power."
+            }
+        },
+        {
+            "class_id": 7,
+            "class_name": "sit down",
+            "full_description": "May tilt slightly forward or remain upright as the body lowers. Can reach for a surface or support, such as a chair or a nearby object, to aid in the sitting process. May extend backward to support the body's weight or reach for the seat, then relaxes as the body settles into the sitting position. Bends at the hip joint to lower the torso toward the seat. Bends at the knee joint as the body descends into the seated position. Can adjust position for stability, often remaining flat on the ground or lifting slightly as the weight shifts.",
+            "parts": {
+                "head": "May tilt slightly forward or remain upright as the body lowers",
+                "hand": "Can reach for a surface or support, such as a chair or a nearby object, to aid in the sitting process",
+                "arm": "May extend backward to support the body's weight or reach for the seat, then relaxes as the body settles into the sitting position",
+                "hip": "Bends at the hip joint to lower the torso toward the seat",
+                "leg": "Bends at the knee joint as the body descends into the seated position",
+                "foot": "Can adjust position for stability, often remaining flat on the ground or lifting slightly as the weight shifts."
+            }
+        },
+        {
+            "class_id": 8,
+            "class_name": "stand up",
+            "full_description": "Lifts slightly, often turning to look in the direction of movement. May push off a surface, such as a chair or the ground, for support. Assists in pushing the body upward by pushing off a surface or swinging upward for balance. Straightens as the body lifts, providing support and stability. Extends at the knee joint, lifting the body's weight. Pushes against the ground to provide leverage for standing, with the heel often lifting first followed by the rest of the foot.",
+            "parts": {
+                "head": "Lifts slightly, often turning to look in the direction of movement",
+                "hand": "May push off a surface, such as a chair or the ground, for support",
+                "arm": "Assists in pushing the body upward by pushing off a surface or swinging upward for balance",
+                "hip": "Straightens as the body lifts, providing support and stability",
+                "leg": "Extends at the knee joint, lifting the body's weight",
+                "foot": "Pushes against the ground to provide leverage for standing, with the heel often lifting first followed by the rest of the foot."
+            }
+        },
+        {
+            "class_id": 9,
+            "class_name": "clapping",
+            "full_description": "Generally faces forward, but may turn slightly towards the direction of the applause. Strikes together in a rhythmic motion to create the clapping sound. Swings back and forth to bring the hands together for each clap. Usually remains stationary during clapping, providing stability to the upper body. May slightly shift weight from one leg to the other for balance. Typically remains planted on the ground, providing stability while clapping.",
+            "parts": {
+                "head": "Generally faces forward, but may turn slightly towards the direction of the applause",
+                "hand": "Strikes together in a rhythmic motion to create the clapping sound",
+                "arm": "Swings back and forth to bring the hands together for each clap",
+                "hip": "Usually remains stationary during clapping, providing stability to the upper body",
+                "leg": "May slightly shift weight from one leg to the other for balance",
+                "foot": "Typically remains planted on the ground, providing stability while clapping."
+            }
+        },
+        {
+            "class_id": 10,
+            "class_name": "reading",
+            "full_description": "Usually faces forward, with eyes scanning the text on the page or screen. Holds the book, tablet, or other reading material, turning pages as necessary. Supports the weight of the book or device and may turn pages or scroll. Maintains a comfortable sitting or standing position while reading. Can be crossed or resting on the ground, providing support and stability. Typically remains in place, supporting the leg and body while reading.",
+            "parts": {
+                "head": "Usually faces forward, with eyes scanning the text on the page or screen",
+                "hand": "Holds the book, tablet, or other reading material, turning pages as necessary",
+                "arm": "Supports the weight of the book or device and may turn pages or scroll",
+                "hip": "Maintains a comfortable sitting or standing position while reading",
+                "leg": "Can be crossed or resting on the ground, providing support and stability",
+                "foot": "Typically remains in place, supporting the leg and body while reading."
+            }
+        },
+        {
+            "class_id": 11,
+            "class_name": "writing",
+            "full_description": "Often leans slightly forward or to the side, focusing on the writing surface. Holds the writing tool (pen, pencil, etc.) and guides it across the paper or screen. Moves in conjunction with the hand, providing support and control for writing. Typically remains stationary, providing stability while seated or standing. Can be crossed or resting on the ground, providing support and stability. Generally remains in place, supporting the leg and body while writing.",
+            "parts": {
+                "head": "Often leans slightly forward or to the side, focusing on the writing surface",
+                "hand": "Holds the writing tool (pen, pencil, etc.) and guides it across the paper or screen",
+                "arm": "Moves in conjunction with the hand, providing support and control for writing",
+                "hip": "Typically remains stationary, providing stability while seated or standing",
+                "leg": "Can be crossed or resting on the ground, providing support and stability",
+                "foot": "Generally remains in place, supporting the leg and body while writing."
+            }
+        },
+        {
+            "class_id": 12,
+            "class_name": "tear up paper",
+            "full_description": "Might tilt slightly forward to focus on the paper being torn. Grasps the paper firmly and applies pressure to tear it. Moves in a controlled motion to tear the paper, using strength and coordination. Often remains stationary, providing stability to the upper body during the tearing process. Can shift weight slightly for balance or stability, especially if standing while tearing paper. Generally remains in place, providing support to the leg and body during the activity.",
+            "parts": {
+                "head": "Might tilt slightly forward to focus on the paper being torn",
+                "hand": "Grasps the paper firmly and applies pressure to tear it",
+                "arm": "Moves in a controlled motion to tear the paper, using strength and coordination",
+                "hip": "Often remains stationary, providing stability to the upper body during the tearing process",
+                "leg": "Can shift weight slightly for balance or stability, especially if standing while tearing paper",
+                "foot": "Generally remains in place, providing support to the leg and body during the activity."
+            }
+        },
+        {
+            "class_id": 13,
+            "class_name": "put on jacket",
+            "full_description": "May lean slightly forward or tilt to one side to allow the jacket to slip on more easily. Grasps the edges of the jacket collar or sleeves to guide them onto the arms. Slides into the sleeves of the jacket one at a time, with the hand leading the way. May shift slightly to accommodate the movement of the arms and shoulders as the jacket is put on. Generally remains in place but may shift weight slightly for balance. Usually remains planted on the ground, providing stability while putting on the jacket.",
+            "parts": {
+                "head": "May lean slightly forward or tilt to one side to allow the jacket to slip on more easily",
+                "hand": "Grasps the edges of the jacket collar or sleeves to guide them onto the arms",
+                "arm": "Slides into the sleeves of the jacket one at a time, with the hand leading the way",
+                "hip": "May shift slightly to accommodate the movement of the arms and shoulders as the jacket is put on",
+                "leg": "Generally remains in place but may shift weight slightly for balance",
+                "foot": "Usually remains planted on the ground, providing stability while putting on the jacket."
+            }
+        },
+        {
+            "class_id": 14,
+            "class_name": "take off jacket",
+            "full_description": "Often remains upright or may tilt slightly forward as the jacket is removed. Grasps the edges of the jacket or reaches for the zipper to start the removal process. Pulls one arm out of the sleeve at a time, with the hand leading the way. May shift slightly to accommodate the movement of the arms and shoulders as the jacket is taken off. Generally remains in place but may shift weight slightly for balance. Usually remains planted on the ground, providing stability while taking off the jacket.",
+            "parts": {
+                "head": "Often remains upright or may tilt slightly forward as the jacket is removed",
+                "hand": "Grasps the edges of the jacket or reaches for the zipper to start the removal process",
+                "arm": "Pulls one arm out of the sleeve at a time, with the hand leading the way",
+                "hip": "May shift slightly to accommodate the movement of the arms and shoulders as the jacket is taken off",
+                "leg": "Generally remains in place but may shift weight slightly for balance",
+                "foot": "Usually remains planted on the ground, providing stability while taking off the jacket."
+            }
+        },
+        {
+            "class_id": 15,
+            "class_name": "put on a shoe",
+            "full_description": "Generally remains upright, with perhaps a slight tilt downwards to watch the process. Grabs the shoe and holds it steady while guiding the foot into it. May assist by holding the shoe or offering support to maintain balance. Often remains stable, providing a solid base for the body during the shoe-putting process. Lifts slightly as the foot slides into the shoe, then lowers once it's in place. Slides into the shoe, pressing against the heel and toe to ensure a snug fit.",
+            "parts": {
+                "head": "Generally remains upright, with perhaps a slight tilt downwards to watch the process",
+                "hand": "Grabs the shoe and holds it steady while guiding the foot into it",
+                "arm": "May assist by holding the shoe or offering support to maintain balance",
+                "hip": "Often remains stable, providing a solid base for the body during the shoe-putting process",
+                "leg": "Lifts slightly as the foot slides into the shoe, then lowers once it's in place",
+                "foot": "Slides into the shoe, pressing against the heel and toe to ensure a snug fit."
+            }
+        },
+        {
+            "class_id": 16,
+            "class_name": "take off a shoe",
+            "full_description": "Often remains upright, with perhaps a slight tilt downwards to watch the process. Reaches down to grasp the shoe and holds it steady while guiding it off the foot. May assist by holding the shoe or offering support to maintain balance. Often remains stable, providing a solid base for the body during the shoe removal process. Lifts slightly as the foot is pulled out of the shoe, then lowers once it's free. Slides out of the shoe, with the heel lifting first followed by the rest of the foot.",
+            "parts": {
+                "head": "Often remains upright, with perhaps a slight tilt downwards to watch the process",
+                "hand": "Reaches down to grasp the shoe and holds it steady while guiding it off the foot",
+                "arm": "May assist by holding the shoe or offering support to maintain balance",
+                "hip": "Often remains stable, providing a solid base for the body during the shoe removal process",
+                "leg": "Lifts slightly as the foot is pulled out of the shoe, then lowers once it's free",
+                "foot": "Slides out of the shoe, with the heel lifting first followed by the rest of the foot."
+            }
+        },
+        {
+            "class_id": 17,
+            "class_name": "put on glasses",
+            "full_description": "Tilts slightly forward or remains upright to facilitate the placement of the glasses on the face. Grasps the glasses by the frames or temples. Raises the glasses towards the face, positioning them in front of the eyes. Generally remains stationary, providing stability to the upper body during the process. May shift weight slightly for balance, especially if standing or adjusting position. Typically remains in place, providing support to the leg and body while putting on the glasses.",
+            "parts": {
+                "head": "Tilts slightly forward or remains upright to facilitate the placement of the glasses on the face",
+                "hand": "Grasps the glasses by the frames or temples",
+                "arm": "Raises the glasses towards the face, positioning them in front of the eyes",
+                "hip": "Generally remains stationary, providing stability to the upper body during the process",
+                "leg": "May shift weight slightly for balance, especially if standing or adjusting position",
+                "foot": "Typically remains in place, providing support to the leg and body while putting on the glasses."
+            }
+        },
+        {
+            "class_id": 18,
+            "class_name": "take off glasses",
+            "full_description": "May tilt slightly forward or remain upright as the glasses are removed. Grasps the glasses by the frames or temples. Lowers the glasses away from the face, allowing them to be taken off. Generally remains stationary, providing stability to the upper body during the process. May shift weight slightly for balance, especially if standing or adjusting position. Typically remains in place, providing support to the leg and body while taking off the glasses.",
+            "parts": {
+                "head": "May tilt slightly forward or remain upright as the glasses are removed",
+                "hand": "Grasps the glasses by the frames or temples",
+                "arm": "Lowers the glasses away from the face, allowing them to be taken off",
+                "hip": "Generally remains stationary, providing stability to the upper body during the process",
+                "leg": "May shift weight slightly for balance, especially if standing or adjusting position",
+                "foot": "Typically remains in place, providing support to the leg and body while taking off the glasses."
+            }
+        },
+        {
+            "class_id": 19,
+            "class_name": "put on a hat/cap",
+            "full_description": "Bends slightly forward or remains upright to position the hat correctly. Holds the hat by its brim or crown, preparing to place it on the head. Lifts the hat towards the head, guiding it into position. Often remains stationary, providing stability to the upper body during the process. May shift weight slightly for balance, especially if standing or adjusting position. Typically remains in place, providing support to the leg and body while putting on the hat or cap.",
+            "parts": {
+                "head": "Bends slightly forward or remains upright to position the hat correctly",
+                "hand": "Holds the hat by its brim or crown, preparing to place it on the head",
+                "arm": "Lifts the hat towards the head, guiding it into position",
+                "hip": "Often remains stationary, providing stability to the upper body during the process",
+                "leg": "May shift weight slightly for balance, especially if standing or adjusting position",
+                "foot": "Typically remains in place, providing support to the leg and body while putting on the hat or cap."
+            }
+        },
+        {
+            "class_id": 20,
+            "class_name": "take off a hat/cap",
+            "full_description": "May tilt slightly forward or remain upright as the hat is removed. Grasps the hat by its brim or crown, preparing to lift it off. Raises the hat away from the head, guiding it off. Often remains stationary, providing stability to the upper body during the process. May shift weight slightly for balance, especially if standing or adjusting position. Typically remains in place, providing support to the leg and body while taking off the hat or cap.",
+            "parts": {
+                "head": "May tilt slightly forward or remain upright as the hat is removed",
+                "hand": "Grasps the hat by its brim or crown, preparing to lift it off",
+                "arm": "Raises the hat away from the head, guiding it off",
+                "hip": "Often remains stationary, providing stability to the upper body during the process",
+                "leg": "May shift weight slightly for balance, especially if standing or adjusting position",
+                "foot": "Typically remains in place, providing support to the leg and body while taking off the hat or cap."
+            }
+        },
+        {
+            "class_id": 21,
+            "class_name": "cheer up",
+            "full_description": "Lifts slightly, with a smile or a bright expression on the face. Raises into the air or claps together enthusiastically. Extends upward or outward in celebration. May sway or move rhythmically in excitement. Can jump or bounce with energy. May tap or stomp in excitement or happiness.",
+            "parts": {
+                "head": "Lifts slightly, with a smile or a bright expression on the face",
+                "hand": "Raises into the air or claps together enthusiastically",
+                "arm": "Extends upward or outward in celebration",
+                "hip": "May sway or move rhythmically in excitement",
+                "leg": "Can jump or bounce with energy",
+                "foot": "May tap or stomp in excitement or happiness."
+            }
+        },
+        {
+            "class_id": 22,
+            "class_name": "hand waving",
+            "full_description": "Might turn slightly to acknowledge the person being waved at or to follow the motion of the hand. Moves back and forth in a greeting gesture, typically with the palm facing outward. Swings in conjunction with the hand, helping to propel the waving motion. Generally remains stationary, providing stability to the upper body. Can shift slightly for balance, especially if the waving motion is energetic. Typically remains in place, providing support to the leg and body during the waving motion.",
+            "parts": {
+                "head": "Might turn slightly to acknowledge the person being waved at or to follow the motion of the hand",
+                "hand": "Moves back and forth in a greeting gesture, typically with the palm facing outward",
+                "arm": "Swings in conjunction with the hand, helping to propel the waving motion",
+                "hip": "Generally remains stationary, providing stability to the upper body",
+                "leg": "Can shift slightly for balance, especially if the waving motion is energetic",
+                "foot": "Typically remains in place, providing support to the leg and body during the waving motion."
+            }
+        },
+        {
+            "class_id": 23,
+            "class_name": "kicking something",
+            "full_description": "Typically remains stable and focused on the target or direction of the kick. Often remains by the side or may be used for balance, especially if the kick requires precision or power. Can swing slightly for balance or momentum, but primarily stays by the side. Rotates slightly to provide power and momentum to the kicking leg. Extends forward rapidly, with the knee bending and the foot making contact with the object being kicked. Strikes the object with force, then retracts quickly to maintain balance and prepare for the next movement.",
+            "parts": {
+                "head": "Typically remains stable and focused on the target or direction of the kick",
+                "hand": "Often remains by the side or may be used for balance, especially if the kick requires precision or power",
+                "arm": "Can swing slightly for balance or momentum, but primarily stays by the side",
+                "hip": "Rotates slightly to provide power and momentum to the kicking leg",
+                "leg": "Extends forward rapidly, with the knee bending and the foot making contact with the object being kicked",
+                "foot": "Strikes the object with force, then retracts quickly to maintain balance and prepare for the next movement."
+            }
+        },
+        {
+            "class_id": 24,
+            "class_name": "reach into pocket",
+            "full_description": "May tilt slightly forward or to the side to watch the hand as it reaches into the pocket. Extends towards the pocket, fingers ready to grasp whatever is inside. Moves in conjunction with the hand, guiding it into the pocket. Often remains stable, providing a base for the arm to reach into the pocket. May slightly shift weight for balance or stability during the reaching motion. Typically remains in place, providing support to the leg and body while reaching into the pocket.",
+            "parts": {
+                "head": "May tilt slightly forward or to the side to watch the hand as it reaches into the pocket",
+                "hand": "Extends towards the pocket, fingers ready to grasp whatever is inside",
+                "arm": "Moves in conjunction with the hand, guiding it into the pocket",
+                "hip": "Often remains stable, providing a base for the arm to reach into the pocket",
+                "leg": "May slightly shift weight for balance or stability during the reaching motion",
+                "foot": "Typically remains in place, providing support to the leg and body while reaching into the pocket."
+            }
+        },
+        {
+            "class_id": 25,
+            "class_name": "hopping",
+            "full_description": "Generally stays level, with eyes focused on the direction of movement. Often stays by the side for balance, but may move slightly to aid in stabilizing the body. Can swing gently to assist in maintaining balance while hopping. Moves in coordination with the leg to provide propulsion and stability. Extends and pushes off the ground to propel the body upwards during the hop. Lifts off the ground, providing the push needed for the hop, then lands again to absorb the impact.",
+            "parts": {
+                "head": "Generally stays level, with eyes focused on the direction of movement",
+                "hand": "Often stays by the side for balance, but may move slightly to aid in stabilizing the body",
+                "arm": "Can swing gently to assist in maintaining balance while hopping",
+                "hip": "Moves in coordination with the leg to provide propulsion and stability",
+                "leg": "Extends and pushes off the ground to propel the body upwards during the hop",
+                "foot": "Lifts off the ground, providing the push needed for the hop, then lands again to absorb the impact."
+            }
+        },
+        {
+            "class_id": 26,
+            "class_name": "jump up",
+            "full_description": "May tilt slightly upwards as the body prepares to jump. Often stays by the side or may swing slightly for balance during the jump. Can swing gently to aid in propulsion and balance during the jump. Bends slightly to provide power and momentum for the jump. Bends at the knee, then extends forcefully to propel the body upwards. Pushes off the ground with force, providing the main thrust for the jump.",
+            "parts": {
+                "head": "May tilt slightly upwards as the body prepares to jump",
+                "hand": "Often stays by the side or may swing slightly for balance during the jump",
+                "arm": "Can swing gently to aid in propulsion and balance during the jump",
+                "hip": "Bends slightly to provide power and momentum for the jump",
+                "leg": "Bends at the knee, then extends forcefully to propel the body upwards",
+                "foot": "Pushes off the ground with force, providing the main thrust for the jump."
+            }
+        },
+        {
+            "class_id": 27,
+            "class_name": "phone call",
+            "full_description": "Typically remains upright, with the ear positioned close to the phone's speaker. Holds the phone securely, bringing it to the ear or holding it in front of the mouth. Supports the weight of the phone and may adjust its position for comfort during the call. Often remains stationary, providing stability to the upper body during the call. Can be crossed or resting on the ground, providing support and stability. Typically remains in place, providing support to the leg and body during the call.",
+            "parts": {
+                "head": "Typically remains upright, with the ear positioned close to the phone's speaker",
+                "hand": "Holds the phone securely, bringing it to the ear or holding it in front of the mouth",
+                "arm": "Supports the weight of the phone and may adjust its position for comfort during the call",
+                "hip": "Often remains stationary, providing stability to the upper body during the call",
+                "leg": "Can be crossed or resting on the ground, providing support and stability",
+                "foot": "Typically remains in place, providing support to the leg and body during the call."
+            }
+        },
+        {
+            "class_id": 28,
+            "class_name": "play with phone/tablet",
+            "full_description": "May tilt slightly downwards to focus on the screen of the device. Holds the phone or tablet securely and controls its movements, such as tapping or swiping. Supports the weight of the device and may adjust its position for comfort during use. Often remains stationary, providing stability to the upper body. Can be crossed or resting on the ground, providing support and stability. Typically remains in place, providing support to the leg and body while using the phone or tablet.",
+            "parts": {
+                "head": "May tilt slightly downwards to focus on the screen of the device",
+                "hand": "Holds the phone or tablet securely and controls its movements, such as tapping or swiping",
+                "arm": "Supports the weight of the device and may adjust its position for comfort during use",
+                "hip": "Often remains stationary, providing stability to the upper body",
+                "leg": "Can be crossed or resting on the ground, providing support and stability",
+                "foot": "Typically remains in place, providing support to the leg and body while using the phone or tablet."
+            }
+        },
+        {
+            "class_id": 29,
+            "class_name": "type on a keyboard",
+            "full_description": "Typically remains upright, with eyes focused on the screen or keyboard. Moves fingers to press keys on the keyboard. Supports the weight of the hand and provides stability during typing. Often remains stationary, providing stability to the upper body. Can be crossed or resting on the ground, providing support and stability. Typically remains in place, providing support to the leg and body while typing.",
+            "parts": {
+                "head": "Typically remains upright, with eyes focused on the screen or keyboard",
+                "hand": "Moves fingers to press keys on the keyboard",
+                "arm": "Supports the weight of the hand and provides stability during typing",
+                "hip": "Often remains stationary, providing stability to the upper body",
+                "leg": "Can be crossed or resting on the ground, providing support and stability",
+                "foot": "Typically remains in place, providing support to the leg and body while typing."
+            }
+        },
+        {
+            "class_id": 30,
+            "class_name": "point to something",
+            "full_description": "May turn slightly to direct attention towards the object being pointed at. Extends the index finger towards the object, pointing in its direction. Moves in conjunction with the hand, guiding it to point accurately. Often remains stable, providing a base for the arm to move freely. Can shift weight slightly for balance or to adjust position. Typically remains in place, providing support to the leg and body while pointing.",
+            "parts": {
+                "head": "May turn slightly to direct attention towards the object being pointed at",
+                "hand": "Extends the index finger towards the object, pointing in its direction",
+                "arm": "Moves in conjunction with the hand, guiding it to point accurately",
+                "hip": "Often remains stable, providing a base for the arm to move freely",
+                "leg": "Can shift weight slightly for balance or to adjust position",
+                "foot": "Typically remains in place, providing support to the leg and body while pointing."
+            }
+        },
+        {
+            "class_id": 31,
+            "class_name": "taking a selfie",
+            "full_description": "May tilt slightly to find the best angle or position for the selfie. Holds the phone or camera at arm's length, ready to take the photo. Extends outward to hold the phone or camera, positioning it for the selfie. Often remains stable, providing a base for the body while taking the photo. Can shift weight slightly for balance or to adjust position. Typically remains in place, providing support to the leg and body while taking the selfie.",
+            "parts": {
+                "head": "May tilt slightly to find the best angle or position for the selfie",
+                "hand": "Holds the phone or camera at arm's length, ready to take the photo",
+                "arm": "Extends outward to hold the phone or camera, positioning it for the selfie",
+                "hip": "Often remains stable, providing a base for the body while taking the photo",
+                "leg": "Can shift weight slightly for balance or to adjust position",
+                "foot": "Typically remains in place, providing support to the leg and body while taking the selfie."
+            }
+        },
+        {
+            "class_id": 32,
+            "class_name": "check time (from watch)",
+            "full_description": "Tilts slightly downwards or to the side to glance at the watch face. Raises and rotates the wrist to bring the watch face into view. Moves in conjunction with the hand, positioning the watch for easy viewing. Generally remains stable, providing a base for the body during the action. Can shift weight slightly for balance or to adjust position. Typically remains in place, providing support to the leg and body while checking the time.",
+            "parts": {
+                "head": "Tilts slightly downwards or to the side to glance at the watch face",
+                "hand": "Raises and rotates the wrist to bring the watch face into view",
+                "arm": "Moves in conjunction with the hand, positioning the watch for easy viewing",
+                "hip": "Generally remains stable, providing a base for the body during the action",
+                "leg": "Can shift weight slightly for balance or to adjust position",
+                "foot": "Typically remains in place, providing support to the leg and body while checking the time."
+            }
+        },
+        {
+            "class_id": 33,
+            "class_name": "rub two hands",
+            "full_description": "Often stays upright, with the eyes potentially focused on the hands or elsewhere. Rubs against the other hand, creating friction and warmth. Moves in coordination with the hands, providing the motion for rubbing. Generally remains stable, providing a base for the upper body. Can shift slightly for comfort or balance, but typically stays in place. Typically remains in place, providing support to the leg and body during the action.",
+            "parts": {
+                "head": "Often stays upright, with the eyes potentially focused on the hands or elsewhere",
+                "hand": "Rubs against the other hand, creating friction and warmth",
+                "arm": "Moves in coordination with the hands, providing the motion for rubbing",
+                "hip": "Generally remains stable, providing a base for the upper body",
+                "leg": "Can shift slightly for comfort or balance, but typically stays in place",
+                "foot": "Typically remains in place, providing support to the leg and body during the action."
+            }
+        },
+        {
+            "class_id": 34,
+            "class_name": "nod head/bow",
+            "full_description": "Bows forward or tilts downward in a nodding motion. Typically remains by the side or may be used for balance, especially during a deep bow. Can hang by the side or may be placed across the chest, depending on the depth of the bow. Often remains stable, providing a base for the upper body. Can step forward or shift weight slightly for balance, especially during a deeper bow. Typically remains in place, providing support to the leg and body during the action.",
+            "parts": {
+                "head": "Bows forward or tilts downward in a nodding motion",
+                "hand": "Typically remains by the side or may be used for balance, especially during a deep bow",
+                "arm": "Can hang by the side or may be placed across the chest, depending on the depth of the bow",
+                "hip": "Often remains stable, providing a base for the upper body",
+                "leg": "Can step forward or shift weight slightly for balance, especially during a deeper bow",
+                "foot": "Typically remains in place, providing support to the leg and body during the action."
+            }
+        },
+        {
+            "class_id": 35,
+            "class_name": "shake head",
+            "full_description": "Moves from side to side in a horizontal motion. Typically remains by the side or may be used for balance, especially if the shaking motion is vigorous. Can hang by the side or may move slightly to accompany the motion of the head. Often remains stable, providing a base for the upper body. Can shift weight slightly for balance, especially if the shaking motion is forceful. Typically remains in place, providing support to the leg and body during the action.",
+            "parts": {
+                "head": "Moves from side to side in a horizontal motion",
+                "hand": "Typically remains by the side or may be used for balance, especially if the shaking motion is vigorous",
+                "arm": "Can hang by the side or may move slightly to accompany the motion of the head",
+                "hip": "Often remains stable, providing a base for the upper body",
+                "leg": "Can shift weight slightly for balance, especially if the shaking motion is forceful",
+                "foot": "Typically remains in place, providing support to the leg and body during the action."
+            }
+        },
+        {
+            "class_id": 36,
+            "class_name": "wipe face",
+            "full_description": "May tilt slightly to one side or lean forward to facilitate the wiping motion. Holds a tissue, cloth, or handkerchief and makes contact with the face to wipe away sweat, dirt, or moisture. Moves the hand in a gentle wiping motion across the face, covering areas like the forehead, cheeks, or chin. Often remains stationary, providing stability to the upper body during the wiping process. Can shift weight slightly for balance or comfort, especially if standing or adjusting position. Typically remains in place, providing support to the leg and body while wiping the face.",
+            "parts": {
+                "head": "May tilt slightly to one side or lean forward to facilitate the wiping motion",
+                "hand": "Holds a tissue, cloth, or handkerchief and makes contact with the face to wipe away sweat, dirt, or moisture",
+                "arm": "Moves the hand in a gentle wiping motion across the face, covering areas like the forehead, cheeks, or chin",
+                "hip": "Often remains stationary, providing stability to the upper body during the wiping process",
+                "leg": "Can shift weight slightly for balance or comfort, especially if standing or adjusting position",
+                "foot": "Typically remains in place, providing support to the leg and body while wiping the face."
+            }
+        },
+        {
+            "class_id": 37,
+            "class_name": "salute",
+            "full_description": "Tilts slightly upward or remains upright, often facing forward. Raises to the forehead or eyebrow level, with fingers extended and held together. Lifts the hand in a swift and straight motion towards the head. Generally remains stationary, providing stability to the upper body during the salute. Can remain straight or may slightly bend at the knee for balance. Typically remains in place, providing support to the leg and body during the salute.",
+            "parts": {
+                "head": "Tilts slightly upward or remains upright, often facing forward",
+                "hand": "Raises to the forehead or eyebrow level, with fingers extended and held together",
+                "arm": "Lifts the hand in a swift and straight motion towards the head",
+                "hip": "Generally remains stationary, providing stability to the upper body during the salute",
+                "leg": "Can remain straight or may slightly bend at the knee for balance",
+                "foot": "Typically remains in place, providing support to the leg and body during the salute."
+            }
+        },
+        {
+            "class_id": 38,
+            "class_name": "put palms together",
+            "full_description": "Generally remains upright, with eyes potentially focused on the hands or elsewhere. Brings both palms together, fingers aligned and facing each other. Moves the hands towards each other, bringing the palms together. Typically remains stable, providing a base for the upper body. Can shift weight slightly for balance or comfort. Typically remains in place, providing support to the leg and body during the action.",
+            "parts": {
+                "head": "Generally remains upright, with eyes potentially focused on the hands or elsewhere",
+                "hand": "Brings both palms together, fingers aligned and facing each other",
+                "arm": "Moves the hands towards each other, bringing the palms together",
+                "hip": "Typically remains stable, providing a base for the upper body",
+                "leg": "Can shift weight slightly for balance or comfort",
+                "foot": "Typically remains in place, providing support to the leg and body during the action."
+            }
+        },
+        {
+            "class_id": 39,
+            "class_name": "cross hands in front",
+            "full_description": "Generally remains upright, with eyes potentially focused on the hands or elsewhere. Crosses one hand over the other, fingers may interlace or rest on the opposite arm. Crosses one arm over the other, typically at the wrists or forearms. Often remains stable, providing a base for the upper body. Can shift weight slightly for balance or comfort. Typically remains in place, providing support to the leg and body during the action.",
+            "parts": {
+                "head": "Generally remains upright, with eyes potentially focused on the hands or elsewhere",
+                "hand": "Crosses one hand over the other, fingers may interlace or rest on the opposite arm",
+                "arm": "Crosses one arm over the other, typically at the wrists or forearms",
+                "hip": "Often remains stable, providing a base for the upper body",
+                "leg": "Can shift weight slightly for balance or comfort",
+                "foot": "Typically remains in place, providing support to the leg and body during the action."
+            }
+        },
+        {
+            "class_id": 40,
+            "class_name": "sneeze/cough",
+            "full_description": "May tilt slightly forward or downwards as the body prepares for the sneeze or cough. Can cover the mouth and nose to contain the sneeze or cough, or may be used to hold a tissue or handkerchief. Moves in conjunction with the hand to cover the mouth and nose. Typically remains stable, providing a base for the upper body during the sneeze or cough. Can shift weight slightly for balance or comfort. Typically remains in place, providing support to the leg and body during the action.",
+            "parts": {
+                "head": "May tilt slightly forward or downwards as the body prepares for the sneeze or cough",
+                "hand": "Can cover the mouth and nose to contain the sneeze or cough, or may be used to hold a tissue or handkerchief",
+                "arm": "Moves in conjunction with the hand to cover the mouth and nose",
+                "hip": "Typically remains stable, providing a base for the upper body during the sneeze or cough",
+                "leg": "Can shift weight slightly for balance or comfort",
+                "foot": "Typically remains in place, providing support to the leg and body during the action."
+            }
+        },
+        {
+            "class_id": 41,
+            "class_name": "staggering",
+            "full_description": "Might sway or tilt slightly, possibly struggling to maintain balance. May reach out for support or attempt to stabilize the body by grasping onto nearby objects. Can swing or flail in an uncoordinated manner as the body tries to regain balance. Often shifts from side to side as the body struggles to maintain equilibrium. May step unevenly or buckle under the weight, causing an unsteady gait. Can land awkwardly or stumble as the person attempts to walk or stand.",
+            "parts": {
+                "head": "Might sway or tilt slightly, possibly struggling to maintain balance",
+                "hand": "May reach out for support or attempt to stabilize the body by grasping onto nearby objects",
+                "arm": "Can swing or flail in an uncoordinated manner as the body tries to regain balance",
+                "hip": "Often shifts from side to side as the body struggles to maintain equilibrium",
+                "leg": "May step unevenly or buckle under the weight, causing an unsteady gait",
+                "foot": "Can land awkwardly or stumble as the person attempts to walk or stand."
+            }
+        },
+        {
+            "class_id": 42,
+            "class_name": "falling down",
+            "full_description": "Often tilts backwards or to the side as the body loses balance. Can reach out in an attempt to grab onto something for support or to break the fall. May flail or extend outward in an instinctive effort to regain balance or cushion the fall. Typically shifts suddenly as the body begins to lose stability. May buckle or give way under the weight of the body, contributing to the fall. Often loses contact with the ground or may land awkwardly as the person begins to fall.",
+            "parts": {
+                "head": "Often tilts backwards or to the side as the body loses balance",
+                "hand": "Can reach out in an attempt to grab onto something for support or to break the fall",
+                "arm": "May flail or extend outward in an instinctive effort to regain balance or cushion the fall",
+                "hip": "Typically shifts suddenly as the body begins to lose stability",
+                "leg": "May buckle or give way under the weight of the body, contributing to the fall",
+                "foot": "Often loses contact with the ground or may land awkwardly as the person begins to fall."
+            }
+        },
+        {
+            "class_id": 43,
+            "class_name": "headache",
+            "full_description": "Might be held or massaged as the person tries to alleviate the pain. Can be used to hold the head or apply pressure to specific areas to relieve discomfort. May reach for medication or a cold compress to help alleviate the headache. Often remains stable, providing support to the upper body during discomfort. Can adjust position for comfort, but typically stays in a resting position. Generally remains in place, providing support while the person tries to find relief from the headache.",
+            "parts": {
+                "head": "Might be held or massaged as the person tries to alleviate the pain",
+                "hand": "Can be used to hold the head or apply pressure to specific areas to relieve discomfort",
+                "arm": "May reach for medication or a cold compress to help alleviate the headache",
+                "hip": "Often remains stable, providing support to the upper body during discomfort",
+                "leg": "Can adjust position for comfort, but typically stays in a resting position",
+                "foot": "Generally remains in place, providing support while the person tries to find relief from the headache."
+            }
+        },
+        {
+            "class_id": 44,
+            "class_name": "chest pain",
+            "full_description": "May tilt slightly forward or to the side as the person focuses on the pain or seeks help. Might clutch at the chest or move towards it in an attempt to alleviate or gauge the severity of the pain. Can support the body or be used to hold onto nearby objects for stability. Often remains stable, providing a base for the upper body during discomfort. Can adjust position for comfort, but typically stays in a resting position. Generally remains in place, providing support while the person deals with the chest pain.",
+            "parts": {
+                "head": "May tilt slightly forward or to the side as the person focuses on the pain or seeks help",
+                "hand": "Might clutch at the chest or move towards it in an attempt to alleviate or gauge the severity of the pain",
+                "arm": "Can support the body or be used to hold onto nearby objects for stability",
+                "hip": "Often remains stable, providing a base for the upper body during discomfort",
+                "leg": "Can adjust position for comfort, but typically stays in a resting position",
+                "foot": "Generally remains in place, providing support while the person deals with the chest pain."
+            }
+        },
+        {
+            "class_id": 45,
+            "class_name": "back pain",
+            "full_description": "May tilt slightly forward or to the side as the person tries to find a more comfortable position. Might reach back to touch or support the affected area of the back. Can assist in supporting the body or reaching for objects to help alleviate the pain. Often remains stable, providing a base for the upper body during discomfort. Can adjust position for comfort, but typically stays in a resting position. Generally remains in place, providing support while the person deals with the back pain.",
+            "parts": {
+                "head": "May tilt slightly forward or to the side as the person tries to find a more comfortable position",
+                "hand": "Might reach back to touch or support the affected area of the back",
+                "arm": "Can assist in supporting the body or reaching for objects to help alleviate the pain",
+                "hip": "Often remains stable, providing a base for the upper body during discomfort",
+                "leg": "Can adjust position for comfort, but typically stays in a resting position",
+                "foot": "Generally remains in place, providing support while the person deals with the back pain."
+            }
+        },
+        {
+            "class_id": 46,
+            "class_name": "neck pain",
+            "full_description": "May tilt slightly to one side or forward in an attempt to alleviate discomfort. Might reach up to gently massage or support the neck. Can assist in supporting the head or reaching for objects to help alleviate the pain. Often remains stable, providing a base for the upper body during discomfort. Can adjust position for comfort, but typically stays in a resting position. Generally remains in place, providing support while the person deals with the neck pain.",
+            "parts": {
+                "head": "May tilt slightly to one side or forward in an attempt to alleviate discomfort",
+                "hand": "Might reach up to gently massage or support the neck",
+                "arm": "Can assist in supporting the head or reaching for objects to help alleviate the pain",
+                "hip": "Often remains stable, providing a base for the upper body during discomfort",
+                "leg": "Can adjust position for comfort, but typically stays in a resting position",
+                "foot": "Generally remains in place, providing support while the person deals with the neck pain."
+            }
+        },
+        {
+            "class_id": 47,
+            "class_name": "nausea/vomiting",
+            "full_description": "May bow forward or lean over a surface in anticipation of vomiting. Can cover the mouth or hold onto a container for vomiting. May extend to support the body or hold onto nearby objects for stability. Often remains stable, providing a base for the upper body during the episode. Can adjust position for comfort or stability, but typically stays in a resting position. Generally remains in place, providing support while the person deals with nausea or vomiting.",
+            "parts": {
+                "head": "May bow forward or lean over a surface in anticipation of vomiting",
+                "hand": "Can cover the mouth or hold onto a container for vomiting",
+                "arm": "May extend to support the body or hold onto nearby objects for stability",
+                "hip": "Often remains stable, providing a base for the upper body during the episode",
+                "leg": "Can adjust position for comfort or stability, but typically stays in a resting position",
+                "foot": "Generally remains in place, providing support while the person deals with nausea or vomiting."
+            }
+        },
+        {
+            "class_id": 48,
+            "class_name": "fan self",
+            "full_description": "May tilt slightly back to expose the face and neck to the moving air. Holds the fan and moves it back and forth in front of the face or body. Moves in conjunction with the hand, providing the motion for fanning. Often remains stable, providing a base for the upper body during the fanning motion. Can shift weight slightly for balance or comfort. Typically remains in place, providing support to the leg and body while fanning.",
+            "parts": {
+                "head": "May tilt slightly back to expose the face and neck to the moving air",
+                "hand": "Holds the fan and moves it back and forth in front of the face or body",
+                "arm": "Moves in conjunction with the hand, providing the motion for fanning",
+                "hip": "Often remains stable, providing a base for the upper body during the fanning motion",
+                "leg": "Can shift weight slightly for balance or comfort",
+                "foot": "Typically remains in place, providing support to the leg and body while fanning."
+            }
+        },
+        {
+            "class_id": 49,
+            "class_name": "punch/slap",
+            "full_description": "Typically remains steady or may turn slightly in the direction of the punch or slap. Makes contact with the target area with force, whether in a closed fist for punching or an open palm for slapping. Extends outward to deliver the punch or slap, with the shoulder providing power and momentum. May rotate or shift slightly to add force to the punch or slap, especially for punches delivered with the entire body. Can provide stability and balance, with the stance adjusting depending on the force of the punch or slap. Typically remains grounded to provide a solid base, but may pivot or shift weight depending on the movement.",
+            "parts": {
+                "head": "Typically remains steady or may turn slightly in the direction of the punch or slap",
+                "hand": "Makes contact with the target area with force, whether in a closed fist for punching or an open palm for slapping",
+                "arm": "Extends outward to deliver the punch or slap, with the shoulder providing power and momentum",
+                "hip": "May rotate or shift slightly to add force to the punch or slap, especially for punches delivered with the entire body",
+                "leg": "Can provide stability and balance, with the stance adjusting depending on the force of the punch or slap",
+                "foot": "Typically remains grounded to provide a solid base, but may pivot or shift weight depending on the movement."
+            }
+        },
+        {
+            "class_id": 50,
+            "class_name": "kicking",
+            "full_description": "Typically remains steady, although it may turn slightly to follow the target. Often remains by the side for balance, but may move to guard the face or aid in stability. Can swing in the opposite direction of the kick for balance or can be used for defense. Rotates to generate power for the kick, especially in kicks that involve the entire body. Extends forward with force, making contact with the target. Strikes the target with the desired force, whether with the ball, instep, or heel, depending on the type of kick.",
+            "parts": {
+                "head": "Typically remains steady, although it may turn slightly to follow the target",
+                "hand": "Often remains by the side for balance, but may move to guard the face or aid in stability",
+                "arm": "Can swing in the opposite direction of the kick for balance or can be used for defense",
+                "hip": "Rotates to generate power for the kick, especially in kicks that involve the entire body",
+                "leg": "Extends forward with force, making contact with the target",
+                "foot": "Strikes the target with the desired force, whether with the ball, instep, or heel, depending on the type of kick."
+            }
+        },
+        {
+            "class_id": 51,
+            "class_name": "pushing",
+            "full_description": "Typically remains steady, although it may lean slightly forward to provide momentum. Applies force against the object or person being pushed. Extends outward to transfer the force from the hand to the target. May shift slightly forward or to the side to add power to the push. Can push against the ground to provide stability and power to the push. Provides the foundation for the leg to push against the ground, ensuring balance and support during the action.",
+            "parts": {
+                "head": "Typically remains steady, although it may lean slightly forward to provide momentum",
+                "hand": "Applies force against the object or person being pushed",
+                "arm": "Extends outward to transfer the force from the hand to the target",
+                "hip": "May shift slightly forward or to the side to add power to the push",
+                "leg": "Can push against the ground to provide stability and power to the push",
+                "foot": "Provides the foundation for the leg to push against the ground, ensuring balance and support during the action."
+            }
+        },
+        {
+            "class_id": 52,
+            "class_name": "pat on back",
+            "full_description": "Typically remains upright or may tilt slightly forward to observe the action. Makes contact with the other person's back in a gentle tapping motion. Moves in conjunction with the hand to deliver the pat on the back. Often remains stable, providing a base for the upper body during the action. Can shift weight slightly for balance or comfort. Typically remains in place, providing support to the leg and body while patting someone on the back.",
+            "parts": {
+                "head": "Typically remains upright or may tilt slightly forward to observe the action",
+                "hand": "Makes contact with the other person's back in a gentle tapping motion",
+                "arm": "Moves in conjunction with the hand to deliver the pat on the back",
+                "hip": "Often remains stable, providing a base for the upper body during the action",
+                "leg": "Can shift weight slightly for balance or comfort",
+                "foot": "Typically remains in place, providing support to the leg and body while patting someone on the back."
+            }
+        },
+        {
+            "class_id": 53,
+            "class_name": "point finger",
+            "full_description": "May turn slightly to direct attention toward the direction of the finger. Extends the index finger outward, pointing in the desired direction. Moves in conjunction with the hand to guide the pointing motion. Often remains stable, providing a base for the upper body during the action. Can shift weight slightly for balance or comfort. Typically remains in place, providing support to the leg and body while pointing.",
+            "parts": {
+                "head": "May turn slightly to direct attention toward the direction of the finger",
+                "hand": "Extends the index finger outward, pointing in the desired direction",
+                "arm": "Moves in conjunction with the hand to guide the pointing motion",
+                "hip": "Often remains stable, providing a base for the upper body during the action",
+                "leg": "Can shift weight slightly for balance or comfort",
+                "foot": "Typically remains in place, providing support to the leg and body while pointing."
+            }
+        },
+        {
+            "class_id": 54,
+            "class_name": "hugging",
+            "full_description": "May lean slightly to one side or rest against the other person's shoulder. Typically wraps around the other person's back, shoulder, or waist. Encircles the other person in a gentle embrace, often crossing over their back. May tilt slightly forward to bring the body closer during the hug. Can shift weight slightly for balance or comfort, especially if standing. Typically remains in place, providing support to the leg and body during the hug.",
+            "parts": {
+                "head": "May lean slightly to one side or rest against the other person's shoulder",
+                "hand": "Typically wraps around the other person's back, shoulder, or waist",
+                "arm": "Encircles the other person in a gentle embrace, often crossing over their back",
+                "hip": "May tilt slightly forward to bring the body closer during the hug",
+                "leg": "Can shift weight slightly for balance or comfort, especially if standing",
+                "foot": "Typically remains in place, providing support to the leg and body during the hug."
+            }
+        },
+        {
+            "class_id": 55,
+            "class_name": "giving object",
+            "full_description": "May turn slightly to direct attention towards the recipient or the object being given. Offers the object to the recipient, extending it towards them. Moves in conjunction with the hand to deliver the object to the recipient. Often remains stable, providing a base for the upper body during the action. Can shift weight slightly for balance or comfort, especially if standing. Typically remains in place, providing support to the leg and body during the action of giving the object.",
+            "parts": {
+                "head": "May turn slightly to direct attention towards the recipient or the object being given",
+                "hand": "Offers the object to the recipient, extending it towards them",
+                "arm": "Moves in conjunction with the hand to deliver the object to the recipient",
+                "hip": "Often remains stable, providing a base for the upper body during the action",
+                "leg": "Can shift weight slightly for balance or comfort, especially if standing",
+                "foot": "Typically remains in place, providing support to the leg and body during the action of giving the object."
+            }
+        },
+        {
+            "class_id": 56,
+            "class_name": "touch pocket",
+            "full_description": "May turn slightly to observe the hand reaching towards the pocket. Moves towards the pocket to feel or retrieve something inside. Extends to reach the pocket, guiding the hand towards it. Often remains stable, providing a base for the upper body during the action. Can shift slightly for balance or comfort. Typically remains in place, providing support to the leg and body during the action of touching the pocket.",
+            "parts": {
+                "head": "May turn slightly to observe the hand reaching towards the pocket",
+                "hand": "Moves towards the pocket to feel or retrieve something inside",
+                "arm": "Extends to reach the pocket, guiding the hand towards it",
+                "hip": "Often remains stable, providing a base for the upper body during the action",
+                "leg": "Can shift slightly for balance or comfort",
+                "foot": "Typically remains in place, providing support to the leg and body during the action of touching the pocket."
+            }
+        },
+        {
+            "class_id": 57,
+            "class_name": "shaking hands",
+            "full_description": "Typically remains steady, with a slight nod or tilt forward as a sign of acknowledgment. Extends forward to meet the other person's hand, clasping firmly for the handshake. Moves in conjunction with the hand, extending forward to meet the other person's hand. Often remains stable, providing a base for the upper body during the handshake. Can shift weight slightly for balance or comfort. Typically remains in place, providing support to the leg and body during the handshake.",
+            "parts": {
+                "head": "Typically remains steady, with a slight nod or tilt forward as a sign of acknowledgment",
+                "hand": "Extends forward to meet the other person's hand, clasping firmly for the handshake",
+                "arm": "Moves in conjunction with the hand, extending forward to meet the other person's hand",
+                "hip": "Often remains stable, providing a base for the upper body during the handshake",
+                "leg": "Can shift weight slightly for balance or comfort",
+                "foot": "Typically remains in place, providing support to the leg and body during the handshake."
+            }
+        },
+        {
+            "class_id": 58,
+            "class_name": "walking towards",
+            "full_description": "Typically faces forward, scanning the path ahead. Swings naturally at the sides or may be used for balance. Swings in coordination with the opposite leg to maintain balance and rhythm. Moves in a gentle swaying motion, providing momentum for the steps. Alternates in a synchronized pattern, lifting and extending to propel the body forward. Makes contact with the ground, pushing off to take the next step in the walking motion.",
+            "parts": {
+                "head": "Typically faces forward, scanning the path ahead",
+                "hand": "Swings naturally at the sides or may be used for balance",
+                "arm": "Swings in coordination with the opposite leg to maintain balance and rhythm",
+                "hip": "Moves in a gentle swaying motion, providing momentum for the steps",
+                "leg": "Alternates in a synchronized pattern, lifting and extending to propel the body forward",
+                "foot": "Makes contact with the ground, pushing off to take the next step in the walking motion."
+            }
+        },
+        {
+            "class_id": 59,
+            "class_name": "walking apart",
+            "full_description": "Generally faces forward, but may turn slightly to maintain awareness of the other person. Can hang loosely at the sides or may swing naturally with the movement. Typically swings in rhythm with the opposite leg, aiding in balance and momentum. May sway gently to the side opposite the direction of the steps, aiding in stability. Moves in a coordinated pattern with the arms, taking steps away from each other. Makes contact with the ground, providing support and propulsion for each step taken apart.",
+            "parts": {
+                "head": "Generally faces forward, but may turn slightly to maintain awareness of the other person",
+                "hand": "Can hang loosely at the sides or may swing naturally with the movement",
+                "arm": "Typically swings in rhythm with the opposite leg, aiding in balance and momentum",
+                "hip": "May sway gently to the side opposite the direction of the steps, aiding in stability",
+                "leg": "Moves in a coordinated pattern with the arms, taking steps away from each other",
+                "foot": "Makes contact with the ground, providing support and propulsion for each step taken apart."
+            }
+        }
+    ]
+}
