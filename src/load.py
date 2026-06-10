@@ -63,6 +63,12 @@ def load_class_names():
 
     return descriptions["classes"]
 
+def load_part_embeddings(part_name):
+
+    path = EMBEDDING_DIR / f"{part_name}_embeddings.npy"
+
+    return np.load(path)
+
 def verify_alignment(
     full_embeddings,
     class_descriptions,
@@ -108,6 +114,7 @@ if __name__ == "__main__":
     test_labels = load_test_labels()
 
     full_embeddings = load_full_embeddings()
+    head = load_part_embeddings("head")
 
     print("Train Features:", train_features.shape)
     print("Train Labels:", train_labels.shape)
@@ -116,6 +123,7 @@ if __name__ == "__main__":
     print("Test Labels:", test_labels.shape)
 
     print("Full Embeddings:", full_embeddings.shape)
+    print(head.shape)
 
     class_descriptions = load_class_names()
 
