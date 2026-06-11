@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 
-from load import (
+from src.load import (
     load_train_features,
     load_train_labels,
     load_test_features,
@@ -177,6 +177,16 @@ if __name__ == "__main__":
     aggregated_scores = aggregate_groundability_scores(
         groundability_scores
     )
+    import json
+    with open(
+        "results/groundability_scores.json",
+        "w"
+    ) as f:
+        json.dump(
+            aggregated_scores,
+            f,
+            indent=4
+        )
     print("\n===== GROUNDABILITY SCORES =====\n")
 
     for class_id in groundability_scores:
