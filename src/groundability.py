@@ -1,3 +1,4 @@
+import argparse
 import numpy as np
 
 from sklearn.linear_model import Ridge
@@ -161,10 +162,22 @@ if __name__ == "__main__":
 
     test_features = load_test_features()
     test_labels = load_test_labels()
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--seen",
+        default="rs55.npy"
+    )
+
+    parser.add_argument(
+        "--unseen",
+        default="ru5.npy"
+    )
+    args = parser.parse_args()
 
     seen_classes, unseen_classes = load_split(
-        "rs55.npy",
-        "ru5.npy"
+        args.seen,
+        args.unseen
     )
 
     groundability_scores = compute_groundability_scores(

@@ -11,12 +11,12 @@ Generated per-class, per-body-part text embeddings for NTU-60 using STAR anatomi
 
 * One embedding matrix per anatomical part:
 
-  * head_60.npy
-  * hand_60.npy
-  * arm_60.npy
-  * hip_60.npy
-  * leg_60.npy
-  * foot_60.npy
+  * head_embeddings.npy
+  * hand_embeddings.npy
+  * arm_embeddings.npy
+  * hip_embeddings.npy
+  * leg_embeddings.npy
+  * foot_embeddings.npy
 
 * Shape of each embedding matrix:
 
