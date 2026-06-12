@@ -1,3 +1,4 @@
+import argparse
 import json 
 from pathlib import Path
 
@@ -41,9 +42,18 @@ def load_split(seen_file, unseen_file):
 def load_full_embeddings():
     path = EMBEDDING_DIR / "lb_60.npy"
     embeddings = np.load(path)
+    embeddings = (
+        embeddings
+        /
+        np.linalg.norm(
+            embeddings,
+            axis=1,
+            keepdims=True
+        )   
+    )
     return embeddings
 
-def load_part_embeddings():
+def load_all_part_embeddings():
     part_embeddings = {
         "head": np.load(EMBEDDING_DIR / "head_embeddings.npy"),
         "hand": np.load(EMBEDDING_DIR / "hand_embeddings.npy"),
@@ -66,18 +76,43 @@ def load_class_names():
 def load_part_embeddings(part_name):
 
     path = EMBEDDING_DIR / f"{part_name}_embeddings.npy"
-
-    return np.load(path)
+    embeddings = np.load(path)
+    assert embeddings.shape == (60, 1024), (
+        f"{part_name} embeddings have shape "
+        f"{embeddings.shape}, expected (60,1024)"
+    )
+    return embeddings
 
 def verify_alignment(
-    full_embeddings,
+    text_bank,
     class_descriptions,
+    train_features,
     train_labels,
+    test_features,
     test_labels,
-    unseen_classes,
+    unseen_classes
 ):
-    assert full_embeddings.shape[0] == 60, (
-        f"Expected 60 embedding rows, got {full_embeddings.shape[0]}"
+    
+    assert len(train_features) == len(train_labels), (
+        "Train features and labels length mismatch"
+    )
+    assert len(test_features) == len(test_labels), (
+        "Test features and labels length mismatch"
+    )
+    assert text_bank.shape[0] == 60, (
+        f"Expected 60 text bank rows, got {text_bank.shape[0]}"
+    )
+    assert not np.isnan(train_features).any(), (
+    "NaN found in train features"
+    )
+    assert not np.isnan(test_features).any(), (
+        "NaN found in test features"
+    )
+    assert not np.isinf(train_features).any(), (
+        "Inf found in train features"
+    )
+    assert not np.isinf(test_features).any(), (
+        "Inf found in test features"
     )
     assert len(class_descriptions) == 60, (
         f"Expected 60 class descriptions, got {len(class_descriptions)}"
@@ -126,16 +161,30 @@ if __name__ == "__main__":
     print(head.shape)
 
     class_descriptions = load_class_names()
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--seen",
+        default="rs55.npy"
+    )
+
+    parser.add_argument(
+        "--unseen",
+        default="ru5.npy"
+    )
+    args = parser.parse_args()
 
     seen_classes, unseen_classes = load_split(
-        "rs55.npy",
-        "ru5.npy"
+        args.seen,
+        args.unseen
     )
 
     verify_alignment(
         full_embeddings,
         class_descriptions,
+        train_features,
         train_labels,
+        test_features,
         test_labels,
         unseen_classes
     )
