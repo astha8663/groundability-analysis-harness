@@ -1,6 +1,8 @@
 import argparse
 import numpy as np
+import json
 
+from pathlib import Path
 from sklearn.linear_model import Ridge
 from sklearn.metrics import accuracy_score
 from sklearn.metrics.pairwise import cosine_similarity
@@ -55,6 +57,30 @@ def evaluate_zero_shot(
         )
 
         per_class_accuracy[int(cls)] = cls_acc
+
+    results = {}
+    for cls in per_class_accuracy: 
+        acc = per_class_accuracy[cls]
+        results[str(cls)] = {
+            "accuracy": float(acc),
+            "error": float(1 - acc)
+        }
+    results_dir = Path("results")
+    
+    results_dir.mkdir(
+        exist_ok=True
+    )
+
+    with open(
+        results_dir /
+        "baseline_results.json",
+        "w"
+    ) as f:
+        json.dump(
+            results,
+            f,
+            indent=4
+        )
 
     cm = confusion_matrix(
         test_labels,
