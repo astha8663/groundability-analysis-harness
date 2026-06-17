@@ -119,6 +119,33 @@ def aggregate_groundability_scores(
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--seen",
+        default="rs55.npy"
+    )
+
+    parser.add_argument(
+        "--unseen",
+        default="ru5.npy"
+    )
+    parser.add_argument(
+        "--feature_dir",
+        default="shift_ntu_60_5_r"
+    )
+    args = parser.parse_args()
+    import src.load as load
+    load.FEATURE_DIR = (
+        load.BASE_DIR /
+        "features" /
+        args.feature_dir
+    )
+
+    print(
+        f"Using feature directory: {load.FEATURE_DIR}"
+    )
+    
     train_features = load_train_features()
     train_labels = load_train_labels()
 
@@ -162,18 +189,6 @@ if __name__ == "__main__":
 
     test_features = load_test_features()
     test_labels = load_test_labels()
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        "--seen",
-        default="rs55.npy"
-    )
-
-    parser.add_argument(
-        "--unseen",
-        default="ru5.npy"
-    )
-    args = parser.parse_args()
 
     seen_classes, unseen_classes = load_split(
         args.seen,

@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import normalize
 from sklearn.metrics import confusion_matrix
-from load import load_class_names
+from src.load import load_class_names
 
 
 def fit_projection(seen_features, seen_labels, text_bank):
@@ -95,7 +95,7 @@ def evaluate_zero_shot(
         "predictions": predictions
     }
 
-from load import (
+from src.load import (
     load_train_features,
     load_train_labels,
     load_test_features,
@@ -107,7 +107,32 @@ from load import (
 
 if __name__ == "__main__":
 
-    # Load data
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--seen",
+        default="rs55.npy"
+    )
+    parser.add_argument(
+        "--unseen",
+        default="ru5.npy"
+    )
+    parser.add_argument(
+        "--feature_dir",
+        default="shift_ntu_60_5_r"
+    )
+    args = parser.parse_args()
+    print("Training projection model...")
+
+    import src.load as load
+    load.FEATURE_DIR = (
+        load.BASE_DIR /
+        "features" /
+        args.feature_dir
+    )
+    print(
+        f"Using feature directory: {load.FEATURE_DIR}"
+    )
+    print("FEATURE_DIR =", load.FEATURE_DIR)
     train_features = load_train_features()
     train_labels = load_train_labels()
 
@@ -117,27 +142,11 @@ if __name__ == "__main__":
     text_bank = load_full_embeddings()
     class_info = load_class_names()
 
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        "--seen",
-        default="rs55.npy"
-    )
-
-    parser.add_argument(
-        "--unseen",
-        default="ru5.npy"
-    )
-    args = parser.parse_args()
-
     seen_classes, unseen_classes = load_split(
         args.seen,
         args.unseen
     )
 
-    print("Training projection model...")
-
-    # Train projection
     projection = fit_projection(
         train_features,
         train_labels,
