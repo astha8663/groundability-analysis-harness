@@ -120,6 +120,12 @@ def verify_alignment(
     test_unique = set(np.unique(test_labels))
     unseen_set = set(unseen_classes)
 
+    print("Unique test labels:")
+    print(sorted(test_unique))
+
+    print("Unseen split labels:")
+    print(sorted(unseen_set))
+
     assert test_unique == unseen_set, (
         "Mismatch between unseen split and test labels"
     )
@@ -142,6 +148,31 @@ def verify_alignment(
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--seen",
+        default="rs55.npy"
+    )
+
+    parser.add_argument(
+        "--unseen",
+        default="ru5.npy"
+    )
+    parser.add_argument(
+        "--feature_dir",
+        default="shift_ntu_60_5_r"
+    )
+    args = parser.parse_args()
+    FEATURE_DIR = (
+        BASE_DIR /
+        "features" /
+        args.feature_dir
+    )
+    print(
+        f"Using feature directory: {FEATURE_DIR}"
+    )
+
     train_features = load_train_features()
     train_labels = load_train_labels()
 
@@ -161,18 +192,6 @@ if __name__ == "__main__":
     print(head.shape)
 
     class_descriptions = load_class_names()
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        "--seen",
-        default="rs55.npy"
-    )
-
-    parser.add_argument(
-        "--unseen",
-        default="ru5.npy"
-    )
-    args = parser.parse_args()
 
     seen_classes, unseen_classes = load_split(
         args.seen,
