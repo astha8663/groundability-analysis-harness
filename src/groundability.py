@@ -64,7 +64,8 @@ def compute_groundability_scores(
     parts,
     test_features,
     test_labels,
-    unseen_classes
+    unseen_classes,
+    seen_classes
 ):
     groundability_scores = {}
     for class_id in unseen_classes:
@@ -75,6 +76,10 @@ def compute_groundability_scores(
             continue
         for part in parts:
             embeddings = load_part_embeddings(part)
+            mean_text_embedding = np.mean(
+                embeddings[seen_classes],
+                axis=0
+            )
             probe = probes[part]
             predicted_embeddings = probe.predict(
                 class_features
@@ -94,28 +99,116 @@ def compute_groundability_scores(
                 /
                 np.linalg.norm(true_embedding)
             )
-            cosines = predicted_embeddings @ true_embedding
-            mean_groundability = np.mean(cosines)
-            groundability_scores[int(class_id)][part] = (
-                float(mean_groundability)
+            mean_text_embedding = (
+                mean_text_embedding
+                /
+                np.linalg.norm(mean_text_embedding)
             )
+            cosine_scores = np.dot(
+                predicted_embeddings,
+                true_embedding  
+            )
+            raw_cosine = float(
+                np.mean(cosine_scores)
+            )
+            text_baseline = float(
+                np.dot(
+                    mean_text_embedding,
+                    true_embedding
+                )
+            )
+
+            skill_score = raw_cosine - text_baseline
+            groundability_scores[int(class_id)][part] = {
+                "raw_cosine": raw_cosine,
+                "text_baseline": text_baseline,
+                "skill": skill_score
+            }
     return groundability_scores
 
 def aggregate_groundability_scores(
     groundability_scores
 ):
     aggregated_scores = {}
-    for class_id, part_scores in groundability_scores.items():
-        scores = list(
-            part_scores.values()
-        )
-        mean_score = np.mean(scores)
-        max_score = np.max(scores)
-        aggregated_scores[class_id] = {
-            "mean": float(mean_score),
-            "max": float(max_score)
+
+    for class_id in groundability_scores:
+        part_scores = []
+
+        for part in groundability_scores[class_id]:
+            value = groundability_scores[class_id][part]
+
+            if isinstance(value, dict):
+                score = value["skill"]
+
+            else:
+                score = value
+
+            part_scores.append(score)
+
+        aggregated_scores[int(class_id)] = {
+            "mean": float(np.mean(part_scores)),
+            "max": float(np.max(part_scores))
         }
+
     return aggregated_scores
+
+def cosine_similarity(a, b):
+    a = np.asarray(a)
+    b = np.asarray(b)
+
+    a_norm = np.linalg.norm(a)
+    b_norm = np.linalg.norm(b)
+
+    if a_norm == 0 or b_norm == 0:
+        return 0.0
+
+    return float(np.dot(a, b) / (a_norm * b_norm))
+
+def mean_cosine_to_target(predictions, target):
+    scores = []
+
+    for pred in predictions:
+        scores.append(
+            cosine_similarity(pred, target)
+        )
+
+    return float(np.mean(scores))
+
+def compute_mean_text_embedding(
+    part_embeddings,
+    seen_classes
+):
+    seen_text = part_embeddings[seen_classes]
+    mean_text = np.mean(
+        seen_text,
+        axis=0
+    )
+    return mean_text
+
+def compute_skill_score(
+    predictions,
+    class_text_embedding,
+    mean_text_embedding
+):
+    pred_to_true = mean_cosine_to_target(
+        predictions,
+        class_text_embedding
+    )
+
+    baseline = cosine_similarity(
+        mean_text_embedding,
+        class_text_embedding
+    )
+
+    skill = pred_to_true - baseline
+
+    return {
+        "pred_to_true": float(pred_to_true),
+        "text_baseline": float(baseline),
+        "skill": float(skill)
+    }
+
+
 
 if __name__ == "__main__":
 
@@ -141,6 +234,9 @@ if __name__ == "__main__":
         "features" /
         args.feature_dir
     )
+    seen_tag = args.seen.replace(".npy", "")
+    unseen_tag = args.unseen.replace(".npy", "")
+    split_tag = f"{seen_tag}_{unseen_tag}"
 
     print(
         f"Using feature directory: {load.FEATURE_DIR}"
@@ -200,14 +296,15 @@ if __name__ == "__main__":
         parts,
         test_features,
         test_labels,
-        unseen_classes
+        unseen_classes,
+        seen_classes
     )
     aggregated_scores = aggregate_groundability_scores(
         groundability_scores
     )
     import json
     with open(
-        "results/groundability_scores.json",
+        f"results/groundability_scores_{split_tag}.json",
         "w"
     ) as f:
         json.dump(
@@ -216,14 +313,15 @@ if __name__ == "__main__":
             indent=4
         )
     print("\n===== GROUNDABILITY SCORES =====\n")
-
-    for class_id in groundability_scores:
+    for class_id, part_scores in groundability_scores.items():
         print(f"Class {class_id}")
-        for part in parts:
-            score = groundability_scores[class_id][part]
 
+        for part, score_info in part_scores.items():
             print(
-                f"   {part}: {score:.4f}"
+                f"   {part}: "
+                f"raw={score_info['raw_cosine']:.4f}, "
+                f"baseline={score_info['text_baseline']:.4f}, "
+                f"skill={score_info['skill']:.4f}"
             )
 
         print()

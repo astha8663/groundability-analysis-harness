@@ -84,65 +84,103 @@ def load_part_embeddings(part_name):
     return embeddings
 
 def verify_alignment(
-    text_bank,
+    full_embeddings,
     class_descriptions,
-    train_features,
-    train_labels,
-    test_features,
-    test_labels,
-    unseen_classes
+    *args
 ):
-    
-    assert len(train_features) == len(train_labels), (
-        "Train features and labels length mismatch"
+    """
+    Supports two calling styles:
+
+    1) Test style:
+       verify_alignment(
+           full_embeddings,
+           class_descriptions,
+           train_labels,
+           test_labels,
+           unseen_classes
+       )
+
+    2) Full pipeline style:
+       verify_alignment(
+           full_embeddings,
+           class_descriptions,
+           train_features,
+           train_labels,
+           test_features,
+           test_labels,
+           unseen_classes
+       )
+    """
+
+    if len(args) == 3:
+        train_labels, test_labels, unseen_classes = args
+        train_features = None
+        test_features = None
+
+    elif len(args) == 5:
+        train_features, train_labels, test_features, test_labels, unseen_classes = args
+
+    else:
+        raise TypeError(
+            "verify_alignment expected either:\n"
+            "  verify_alignment(full_embeddings, class_descriptions, train_labels, test_labels, unseen_classes)\n"
+            "or\n"
+            "  verify_alignment(full_embeddings, class_descriptions, train_features, train_labels, test_features, test_labels, unseen_classes)"
+        )
+
+    assert full_embeddings.shape[0] == 60, (
+        f"Expected 60 text bank rows, got {full_embeddings.shape[0]}"
     )
-    assert len(test_features) == len(test_labels), (
-        "Test features and labels length mismatch"
-    )
-    assert text_bank.shape[0] == 60, (
-        f"Expected 60 text bank rows, got {text_bank.shape[0]}"
-    )
-    assert not np.isnan(train_features).any(), (
-    "NaN found in train features"
-    )
-    assert not np.isnan(test_features).any(), (
-        "NaN found in test features"
-    )
-    assert not np.isinf(train_features).any(), (
-        "Inf found in train features"
-    )
-    assert not np.isinf(test_features).any(), (
-        "Inf found in test features"
-    )
+
     assert len(class_descriptions) == 60, (
         f"Expected 60 class descriptions, got {len(class_descriptions)}"
     )
-    test_unique = set(np.unique(test_labels))
-    unseen_set = set(unseen_classes)
 
-    print("Unique test labels:")
-    print(sorted(test_unique))
-
-    print("Unseen split labels:")
-    print(sorted(unseen_set))
+    test_unique = set(np.unique(test_labels).tolist())
+    unseen_set = set(np.array(unseen_classes).tolist())
 
     assert test_unique == unseen_set, (
         "Mismatch between unseen split and test labels"
     )
-    train_unique = set(np.unique(train_labels))
 
-    leakage = train_unique.intersection(unseen_set)
+    assert len(train_labels) > 0, "Train labels are empty"
+    assert len(test_labels) > 0, "Test labels are empty"
 
-    assert len(leakage) == 0, (
-        f"Unseen class leakage detected: {leakage}"
-    )
-    assert len(train_labels) > 0
-    assert len(test_labels) > 0
+    if train_features is not None and test_features is not None:
+        assert len(train_features) == len(train_labels), (
+            "Train features and labels length mismatch"
+        )
+
+        assert len(test_features) == len(test_labels), (
+            "Test features and labels length mismatch"
+        )
+
+        assert not np.isnan(train_features).any(), (
+            "NaN found in train features"
+        )
+
+        assert not np.isnan(test_features).any(), (
+            "NaN found in test features"
+        )
+
+        assert not np.isinf(train_features).any(), (
+            "Inf found in train features"
+        )
+
+        assert not np.isinf(test_features).any(), (
+            "Inf found in test features"
+        )
+
+        train_unique = set(np.unique(train_labels).tolist())
+        leakage = train_unique.intersection(unseen_set)
+
+        assert len(leakage) == 0, (
+            f"Unseen class leakage detected: {leakage}"
+        )
 
     print("All alignment checks passed.")
     print("Unique test labels:")
     print(sorted(test_unique))
-
     print("Unseen split labels:")
     print(sorted(unseen_set))
 
