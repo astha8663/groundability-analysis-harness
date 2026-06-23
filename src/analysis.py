@@ -10,17 +10,17 @@ from src.load import load_class_names
 
 RESULTS_DIR = Path("results")
 def run_analysis(
-    baseline_file,
+    error_file,
     groundability_file,
     aggregation="mean"
 ):
 
     with open(
-        baseline_file,
+        error_file,
         "r"
     ) as f:
 
-        baseline_results = json.load(f)
+        error_results = json.load(f)
 
     with open(
         groundability_file,
@@ -34,14 +34,16 @@ def run_analysis(
     class_ids = []
 
     for cls in groundability_results:
-
         groundability = (
             groundability_results[cls][aggregation]
         )
-
-        error = (
-            baseline_results[cls]["error"]
-        )
+        
+        error_entry = error_results[cls]
+        
+        if isinstance(error_entry, dict):
+            error = error_entry["error"]
+        else:
+            error = error_entry
 
         groundability_values.append(
             groundability
@@ -101,7 +103,7 @@ def run_analysis(
     )
 
     plt.ylabel(
-        "Error Rate"
+        "SA-DVAE Error Rate"
     )
 
     FIGURES_DIR = Path(
@@ -114,7 +116,7 @@ def run_analysis(
 
     plt.savefig(
         FIGURES_DIR /
-        f"groundability_vs_error_{aggregation}.png",
+        f"Groundability_vs_SA-DVAE Error_{aggregation}.png",
         dpi=300,
         bbox_inches="tight"
     )
@@ -126,32 +128,18 @@ def run_analysis(
         "p_value": float(p_value),
         "n_classes": len(class_ids)
     }
-results_55_mean = run_analysis(
-    "results/baseline_results_55_5.json",
-    "results/groundability_scores_55_5.json",
-    "mean"
-)
-
-results_55_max = run_analysis(
-    "results/baseline_results_55_5.json",
-    "results/groundability_scores_55_5.json",
-    "max"
-)
 
 results_48_mean = run_analysis(
-    "results/baseline_results_48_12.json",
+    "results/sadvae_per_class_error_48_12.json",
     "results/groundability_scores_48_12.json",
     "mean"
 )
 
 results_48_max = run_analysis(
-    "results/baseline_results_48_12.json",
+    "results/sadvae_per_class_error_48_12.json",
     "results/groundability_scores_48_12.json",
     "max"
 )
-
-print("55/5 Mean:", results_55_mean)
-print("55/5 Max:", results_55_max)
 print("48/12 Mean:", results_48_mean)
 print("48/12 Max:", results_48_max)
 
